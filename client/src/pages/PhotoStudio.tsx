@@ -54,14 +54,21 @@ export default function PhotoStudio() {
 
     const img = new Image();
     img.onload = () => {
-      canvas.width = img.width;
-      canvas.height = img.height;
+      const rotRad = (rotation * Math.PI) / 180;
+      const is90or270 = rotation % 180 !== 0;
+      
+      if (is90or270) {
+        canvas.width = img.height;
+        canvas.height = img.width;
+      } else {
+        canvas.width = img.width;
+        canvas.height = img.height;
+      }
 
       ctx.save();
       ctx.translate(canvas.width / 2, canvas.height / 2);
-      ctx.rotate((rotation * Math.PI) / 180);
-      ctx.translate(-canvas.width / 2, -canvas.height / 2);
-      ctx.drawImage(img, 0, 0);
+      ctx.rotate(rotRad);
+      ctx.drawImage(img, -img.width / 2, -img.height / 2);
       ctx.restore();
 
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
