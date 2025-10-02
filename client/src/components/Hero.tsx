@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Image, Music } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import heroImage from "@assets/generated_images/Photo_editing_hero_image_57eeb047.png";
 
 export function Hero() {
@@ -39,22 +40,26 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-8">
-            <Button
-              size="lg"
-              className="bg-photo-accent hover:bg-photo-accent text-photo-accent-foreground border border-photo-accent-border"
-              data-testid="button-edit-photos"
-            >
-              <Image className="mr-2 h-5 w-5" />
-              Edit Photos
-            </Button>
-            <Button
-              size="lg"
-              className="bg-music-accent hover:bg-music-accent text-music-accent-foreground border border-music-accent-border"
-              data-testid="button-discover-music"
-            >
-              <Music className="mr-2 h-5 w-5" />
-              Discover Music
-            </Button>
+            <Link href="/photo-studio">
+              <Button
+                size="lg"
+                className="bg-photo-accent hover:bg-photo-accent text-photo-accent-foreground border border-photo-accent-border"
+                data-testid="button-edit-photos"
+              >
+                <Image className="mr-2 h-5 w-5" />
+                Edit Photos
+              </Button>
+            </Link>
+            <Link href="/mood-music">
+              <Button
+                size="lg"
+                className="bg-music-accent hover:bg-music-accent text-music-accent-foreground border border-music-accent-border"
+                data-testid="button-discover-music"
+              >
+                <Music className="mr-2 h-5 w-5" />
+                Discover Music
+              </Button>
+            </Link>
           </div>
 
           <div className="flex items-center gap-2 text-sm text-muted-foreground">

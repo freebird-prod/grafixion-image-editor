@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Image, Music, Smile, Heart, Zap, Cloud, Sun } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 const moods = [
   { id: "happy", name: "Happy", icon: Smile, gradient: "from-yellow-400 to-orange-400" },
@@ -74,13 +75,15 @@ export function InteractiveDemo() {
               </div>
 
               <div className="flex justify-center">
-                <Button
-                  size="lg"
-                  className="bg-photo-accent hover:bg-photo-accent text-photo-accent-foreground"
-                  data-testid="button-try-photo-editor"
-                >
-                  Try Photo Editor
-                </Button>
+                <Link href="/photo-studio">
+                  <Button
+                    size="lg"
+                    className="bg-photo-accent hover:bg-photo-accent text-photo-accent-foreground"
+                    data-testid="button-try-photo-editor"
+                  >
+                    Try Photo Editor
+                  </Button>
+                </Link>
               </div>
             </Card>
           </TabsContent>
@@ -123,13 +126,15 @@ export function InteractiveDemo() {
                   <p className="text-muted-foreground mb-4">
                     Perfect! We'll find the best {moods.find(m => m.id === selectedMood)?.name.toLowerCase()} playlist for you
                   </p>
-                  <Button
-                    size="lg"
-                    className="bg-music-accent hover:bg-music-accent text-music-accent-foreground"
-                    data-testid="button-generate-playlist"
-                  >
-                    Generate Playlist
-                  </Button>
+                  <Link href="/mood-music">
+                    <Button
+                      size="lg"
+                      className="bg-music-accent hover:bg-music-accent text-music-accent-foreground"
+                      data-testid="button-generate-playlist"
+                    >
+                      Generate Playlist
+                    </Button>
+                  </Link>
                 </motion.div>
               )}
             </Card>
