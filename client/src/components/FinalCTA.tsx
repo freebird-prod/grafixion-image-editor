@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Image, Music, ArrowRight } from "lucide-react";
+import { Image, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
@@ -13,11 +13,11 @@ export function FinalCTA() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Creative Workflow?
+            Ready to Transform Your Photos?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of creators using our platform to edit stunning photos
-            and discover the perfect music for every moment.
+            Join thousands of creators using our professional photo editing tools
+            to bring their creative vision to life.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
@@ -29,17 +29,6 @@ export function FinalCTA() {
               >
                 <Image className="mr-2 h-5 w-5" />
                 Start Editing Photos
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/mood-music">
-              <Button
-                size="lg"
-                className="bg-music-accent hover:bg-music-accent text-music-accent-foreground border border-music-accent-border"
-                data-testid="button-get-started-music"
-              >
-                <Music className="mr-2 h-5 w-5" />
-                Discover Music
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

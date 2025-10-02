@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Image, Music } from "lucide-react";
+import { Image, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import heroImage from "@assets/generated_images/Photo_editing_hero_image_57eeb047.png";
@@ -29,14 +29,11 @@ export function Hero() {
           className="flex flex-col justify-center px-4 md:px-8 lg:px-16 py-12 lg:py-0"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Transform Photos,
-            <br />
-            <span className="text-primary">Discover Music</span>
+            Transform Your Photos
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-            Professional photo editing with instant filters and AI-powered music
-            discovery. Edit your photos and find the perfect soundtrack for every
-            mood.
+            Professional photo editing with instant filters and effects.
+            Edit your photos and bring your creative vision to life.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-8">
@@ -48,16 +45,7 @@ export function Hero() {
               >
                 <Image className="mr-2 h-5 w-5" />
                 Edit Photos
-              </Button>
-            </Link>
-            <Link href="/mood-music">
-              <Button
-                size="lg"
-                className="bg-music-accent hover:bg-music-accent text-music-accent-foreground border border-music-accent-border"
-                data-testid="button-discover-music"
-              >
-                <Music className="mr-2 h-5 w-5" />
-                Discover Music
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           </div>
@@ -65,7 +53,6 @@ export function Hero() {
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <div className="flex -space-x-2">
               <div className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background" />
-              <div className="w-8 h-8 rounded-full bg-music-accent/20 border-2 border-background" />
               <div className="w-8 h-8 rounded-full bg-photo-accent/20 border-2 border-background" />
             </div>
             <span>Join 10,000+ creators transforming their content</span>

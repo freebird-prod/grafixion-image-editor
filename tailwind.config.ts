@@ -86,11 +86,6 @@ export default {
           foreground: "hsl(var(--photo-accent-foreground) / <alpha-value>)",
           border: "var(--photo-accent-border)",
         },
-        "music-accent": {
-          DEFAULT: "hsl(var(--music-accent) / <alpha-value>)",
-          foreground: "hsl(var(--music-accent-foreground) / <alpha-value>)",
-          border: "var(--music-accent-border)",
-        },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
