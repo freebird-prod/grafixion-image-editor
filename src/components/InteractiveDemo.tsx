@@ -1,35 +1,23 @@
-import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Cloud, Heart, Image, Smile, Sun, Zap } from "lucide-react";
-import { motion } from "framer-motion";
-import { Link } from "wouter";
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
 
-const moods = [
-  {
-    id: "happy", name: "Happy", icon:
-      Smile, gradient: "from-yellow-400 to-orange-400"
-  },
-  { id: "romantic", name: "Romantic", icon: Heart, gradient: "from-pink-400 to-rose-400" },
-  { id: "energetic", name: "Energetic", icon: Zap, gradient: "from-green-400 to-emerald-400" },
-  { id: "calm", name: "Calm", icon: Cloud, gradient: "from-blue-400 to-cyan-400" },
-  { id: "motivated", name: "Motivated", icon: Sun, gradient: "from-purple-400 to-indigo-400" },
-];
+import { Card } from "@/components/ui/card";
 
 export function InteractiveDemo() {
   return (
     <section className="py-24 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Try Photo Editor</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Experience our professional photo editing tools firsthand
           </p>
-        </motion.div>
+        </div>
 
         <Card className="p-8">
           <div className="text-center mb-6">
@@ -40,7 +28,13 @@ export function InteractiveDemo() {
           </div>
 
           <div className="aspect-video rounded-lg border-2 border-dashed border-border bg-card flex flex-col items-center justify-center gap-4 mb-6">
-            <Image className="h-16 w-16 text-muted-foreground" />
+            {/* simple SVG placeholder instead of external icon component */}
+            <svg className="h-16 w-16 text-muted-foreground" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+              <path d="M21 15l-5-5-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+
             <div className="text-center">
               <p className="font-medium mb-1">Drag & drop your photo here</p>
               <p className="text-sm text-muted-foreground">or click to browse</p>
@@ -60,14 +54,16 @@ export function InteractiveDemo() {
           </div>
 
           <div className="flex justify-center">
-            <Link href="/photo-studio">
+            <a href="/photo-studio">
               <button className="bg-photo-accent hover:bg-photo-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
                 Try Photo Editor
               </button>
-            </Link>
+            </a>
           </div>
         </Card>
       </div>
     </section>
   );
 }
+
+export default InteractiveDemo;
